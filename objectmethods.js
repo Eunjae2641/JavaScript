@@ -96,6 +96,49 @@ const obj = makeObj('나이', 33);  //앞에 넣는 값이 key
 
 console.log(obj);
 
+//예제3
+const user = {
+  name : "Mike",
+  age : 30,
+};
 
+const user2 = user; //잘못된 복제
+user2.name = "Tom";
+
+console.log(user);
+console.log(user2);
+
+//올바른 복제
+const user2 = Object.assign({}, user);
+
+console.log(user2);
+
+user2.name = "Tome";
+
+console.log(user);
+console.log(user2);
+
+const result = Object.keys(user);
+
+console.log(result);
+
+const result = Object.values(user);
+
+console.log(result);
+
+const result = Object.entries(user);
+
+console.log(result);
+
+//예제4
+
+let arr = [
+  ['mon','월'],
+  ['tue', '화']
+]
+
+const result = Object.fromEntries(arr);
+
+console.log(result);
 
 
